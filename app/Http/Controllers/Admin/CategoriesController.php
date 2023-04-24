@@ -31,6 +31,7 @@ class CategoriesController extends Controller
 
         $dataPriority = Category::orderBy('priority', 'DESC')->first();
         $data['priority'] = $dataPriority['priority'] + 1;
+        // djole ovo da doradis
 
         // snimaje u bazu
         Category::create($data);
