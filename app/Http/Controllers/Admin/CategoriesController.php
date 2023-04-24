@@ -47,7 +47,7 @@ class CategoriesController extends Controller
     }
 
     public function show($id){
-        //
+        return view('admin.categories.create', compact('category'));
     }
 
     public function edit(Category $category){
@@ -72,7 +72,7 @@ class CategoriesController extends Controller
 
         // validacija
         $data = request()->validate([
-            'name' => 'required|string|min:3|max:20',
+            'name' => 'required|string|min:3|max:25',
             'description' => 'required|string|min:10|max:255',
             'text' => 'nullable|string|max:65000',
         ]);
@@ -113,7 +113,7 @@ class CategoriesController extends Controller
     }
 
     public function delete(Category $category){
-        $categories = Category::whereNull('deleted_at')->where('priority', '>', $category->priority)->get();
+        // $categories = Category::whereNull('deleted_at')->where('priority', '>', $category->priority)->get();
 
         $category->delete();
 
