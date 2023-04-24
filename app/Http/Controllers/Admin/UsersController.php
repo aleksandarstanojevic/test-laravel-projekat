@@ -11,6 +11,10 @@ use Illuminate\Support\Facades\Log;
 
 class UsersController extends Controller
 {
+
+// Ovo je neki tekst 1
+// Ovo je tekst 2
+
     public function __construct()
     {
         // auth znaci da moras biti ulogovan da mi prisao akciji
